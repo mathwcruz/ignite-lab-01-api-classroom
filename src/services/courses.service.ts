@@ -4,6 +4,7 @@ import slugify from 'slugify';
 import { PrismaService } from '@database/prisma/prisma.service';
 
 type CreateCourseParams = {
+  slug?: string;
   title: string;
 };
 
@@ -12,20 +13,29 @@ export class CoursesService {
   constructor(private prisma: PrismaService) {}
 
   listAllCourses() {
-    this.prisma.course.findMany();
+    return this.prisma.course.findMany();
   }
 
   getCourseById(id: string) {
-    this.prisma.course.findUnique({
+    return this.prisma.course.findUnique({
       where: {
         id,
       },
     });
   }
 
-  async createCourse({ title }: CreateCourseParams) {
-    const slug = slugify(title, { trim: true, lower: true });
+  getCourseBySlug(slug: string) {
+    return this.prisma.course.findUnique({
+      where: {
+        slug,
+      },
+    });
+  }
 
+  async createCourse({
+    title,
+    slug = slugify(title, { trim: true, lower: true }),
+  }: CreateCourseParams) {
     const courseWithSameSlug = await this.prisma.course.findUnique({
       where: {
         slug,
