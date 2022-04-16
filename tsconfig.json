@@ -9,13 +9,6 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": ".",
-    "paths": {
-      "@database/*": ["./src/database/*"],
-      "@http/*": ["./src/http/*"],
-      "@messaging/*": ["./src/messaging/*"],
-      "@services/*": ["./src/services/*"]
-    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
