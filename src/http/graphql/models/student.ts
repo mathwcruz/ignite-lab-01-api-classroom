@@ -1,5 +1,4 @@
 import { Directive, Field, ID, ObjectType } from '@nestjs/graphql';
-
 import { Enrollment } from './enrollment';
 
 @ObjectType('User')

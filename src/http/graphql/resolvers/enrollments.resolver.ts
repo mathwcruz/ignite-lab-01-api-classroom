@@ -1,15 +1,13 @@
 import { UseGuards } from '@nestjs/common';
-import { Resolver, Query, ResolveField, Parent } from '@nestjs/graphql';
-
-import { Enrollment } from '@http/graphql/models/enrollment';
-import { AuthorizationGuard } from '@http/auth/authorization.guard';
-
-import { CoursesService } from '@services/courses.service';
-import { EnrollmentsService } from '@services/enrollments.service';
-import { StudentsService } from '@services/students.service';
+import { Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
+import { CoursesService } from '../../../services/courses.service';
+import { EnrollmentsService } from '../../../services/enrollments.service';
+import { StudentsService } from '../../../services/students.service';
+import { AuthorizationGuard } from '../../auth/authorization.guard';
+import { Enrollment } from '../models/enrollment';
 
 @Resolver(() => Enrollment)
-export class EnrollmentResolver {
+export class EnrollmentsResolver {
   constructor(
     private enrollmentsService: EnrollmentsService,
     private coursesService: CoursesService,
@@ -23,12 +21,12 @@ export class EnrollmentResolver {
   }
 
   @ResolveField()
-  course(@Parent() enrollment: Enrollment) {
-    return this.coursesService.getCourseById(enrollment.courseId);
+  student(@Parent() enrollment: Enrollment) {
+    return this.studentsService.getStudentById(enrollment.studentId);
   }
 
   @ResolveField()
-  student(@Parent() enrollment: Enrollment) {
-    return this.studentsService.getStudentById(enrollment.studentId);
+  course(@Parent() enrollment: Enrollment) {
+    return this.coursesService.getCourseById(enrollment.courseId);
   }
 }

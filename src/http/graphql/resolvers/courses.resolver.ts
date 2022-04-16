@@ -1,21 +1,19 @@
 import { UnauthorizedException, UseGuards } from '@nestjs/common';
-import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
-
-import { CreateCourseInput } from '@http/graphql/inputs/create-course-input';
-import { Course } from '@http/graphql/models/course';
-import { AuthorizationGuard } from '@http/auth/authorization.guard';
-import { AuthUser, CurrentUser } from '@http/auth/current-user';
-
-import { CoursesService } from '@services/courses.service';
-import { EnrollmentsService } from '@services/enrollments.service';
-import { StudentsService } from '@services/students.service';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { CoursesService } from '../../../services/courses.service';
+import { EnrollmentsService } from '../../../services/enrollments.service';
+import { StudentsService } from '../../../services/students.service';
+import { AuthorizationGuard } from '../../auth/authorization.guard';
+import { AuthUser, CurrentUser } from '../../auth/current-user';
+import { CreateCourseInput } from '../inputs/create-course-input';
+import { Course } from '../models/course';
 
 @Resolver(() => Course)
-export class CourseResolver {
+export class CoursesResolver {
   constructor(
     private coursesService: CoursesService,
-    private enrollmentsService: EnrollmentsService,
     private studentsService: StudentsService,
+    private enrollmentsService: EnrollmentsService,
   ) {}
 
   @Query(() => [Course])
@@ -30,14 +28,13 @@ export class CourseResolver {
     const student = await this.studentsService.getStudentByAuthUserId(user.sub);
 
     if (!student) {
-      throw new Error(`Student with id '${user.sub}' not found`);
+      throw new Error('Student not found');
     }
 
-    const enrollment =
-      await this.enrollmentsService.getEnrollmentByCourseAndStudentId({
-        courseId: id,
-        studentId: student.id,
-      });
+    const enrollment = await this.enrollmentsService.getByCourseAndStudentId({
+      courseId: id,
+      studentId: student.id,
+    });
 
     if (!enrollment) {
       throw new UnauthorizedException();
