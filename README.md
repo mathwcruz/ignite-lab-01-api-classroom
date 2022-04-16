@@ -38,7 +38,7 @@
 
 # 🎲 How to run the app
 To run the application on the web, follow the instructions from your terminal:
-- `cd ignite-lab-01-api-classroom` and `code ignite-lab-01-api-classroom`
+- `code ignite-lab-01-api-classroom`
 - Run `yarn` or `npm i` to install project dependencies
 - After that, run `yarn dev` or `npm run dev` to run the app, will open at the address `localhost:3334`
 <br>
