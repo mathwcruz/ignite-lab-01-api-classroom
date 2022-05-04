@@ -22,6 +22,7 @@
 
 ## :rocket: Technologies used:
 <p align="center">
+<img src="https://xnrzwkuslogyvxcfkyyh.supabase.co/storage/v1/object/sign/projects-technologies-icons/postgressql_icon.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9qZWN0cy10ZWNobm9sb2dpZXMtaWNvbnMvcG9zdGdyZXNzcWxfaWNvbi5wbmciLCJpYXQiOjE2NTE2OTA0MzIsImV4cCI6MTk2NzA1MDQzMn0.AOZPThQkef_j4molpx3QODJjtjMWLqm9LskeeAMv1cg" alt="postgresql" width="70" height="70"/>
 <img src="https://xnrzwkuslogyvxcfkyyh.supabase.co/storage/v1/object/sign/projects-technologies-icons/prisma_icon.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9qZWN0cy10ZWNobm9sb2dpZXMtaWNvbnMvcHJpc21hX2ljb24ucG5nIiwiaWF0IjoxNjUwMTUxNTU5LCJleHAiOjE5NjU1MTE1NTl9.exLqPVgVLNm_27p3PP393C-mlYZxc6gmTeDJrlcfrc8" alt="prisma" width="70" height="70"/>
 <img src="https://xnrzwkuslogyvxcfkyyh.supabase.co/storage/v1/object/sign/projects-technologies-icons/graph_ql_icon.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9qZWN0cy10ZWNobm9sb2dpZXMtaWNvbnMvZ3JhcGhfcWxfaWNvbi5wbmciLCJpYXQiOjE2NTAxNDkxODEsImV4cCI6MTk2NTUwOTE4MX0.yZQ86Hmb3AnwoW6qwI2dVGrQ0gUNG-P1i32UWnYSGY4" alt="graphql" width="70" height="70"/>
 <img src="https://xnrzwkuslogyvxcfkyyh.supabase.co/storage/v1/object/sign/projects-technologies-icons/apollo_icon.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9qZWN0cy10ZWNobm9sb2dpZXMtaWNvbnMvYXBvbGxvX2ljb24uc3ZnIiwiaWF0IjoxNjUwMTQ5MTY5LCJleHAiOjE5NjU1MDkxNjl9.cLD3Paf02sG01KbZysbWxpfha93UJ_a3hxZJb2ypm7Y" alt="apollo" width="70" height="70"/>
